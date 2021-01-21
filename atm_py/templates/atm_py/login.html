@@ -1,0 +1,24 @@
+{% extends "atm_py/base.html" %}
+{% block content %}
+    <center><h1>Automated Teller Machine</h1>
+    <form action="">
+        <table id="table_signin">
+
+            <tr>
+                <td>User ID:</td>
+                <td><input type="text" name="userID"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="text" name="passWord"></td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr><td colspan="2"><center><a href={% url 'dashboard-atm' %}><input type="button" value="Login"></a></center></td></tr>
+        </table>
+    </form>
+    </center>
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends "atm_py/base.html" %}
+{% block content %}
+    <center>
+        <h1>Automated Teller Machine</h1>
+        <h3>Main Menu</h3>
+        <a href={% url 'login-atm' %}><button>Signin</button></a> &nbsp;
+        <a href={% url 'signup-atm' %}><button>Signup</button></a> &nbsp;
+        <!-- <a href={% url 'login-atm' %}></a><button>Exit</button> &nbsp; -->
+
+    </center>
+{% endblock content %}

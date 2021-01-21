@@ -1,0 +1,46 @@
+{% extends "atm_py/base.html" %}
+{% block content %}
+    <form action="">
+        <table id="table_signup">
+            <tr>
+                <td colspan=2>Please Enter the following details to signup</td>
+            </tr>
+            <tr>
+                <td>User ID:</td>
+                <td><i>System Generated</i></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td><i>System Generated</i></td>
+            </tr>
+            <tr>
+                <td>Pin Code</td>
+                <td><i>Not Created</i></td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td><i>Inactive</i></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="text" name="passWord"></td>
+            </tr>
+            <tr>
+                <td>Balance</td>
+                <td><i><b>0</b></i></td>
+            </tr>
+            <tr>
+                <td>
+                    <a href={% url 'welcome-atm' %}><input type="button" value="Back"></a>
+                </td>
+                <td>
+                    <a href={% url 'welcome-atm' %}><input type="button" value="Sign Up"></a>
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock content %}

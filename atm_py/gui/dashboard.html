@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+        <h1>Automated Teller Machine</h1>
+    </center>
+    <h3>Hello Mr/Ms.</h3>
+    <h2>What would you like to do?</h2>
+    <button class="dash_btn" id="btn_balance_inquiry">Balance Inquiry</button>
+    <button class="dash_btn" id="btn_withdraw_money">Withdraw Money</button>
+    <button class="dash_btn" id="btn_add_balance">Add Balance</button>
+    </br>
+    <button class="dash_btn" id="btn_chng_pwd">Change Password</button>
+    <button class="dash_btn" id="btn_chng_pin">Change Pin</button>
+    <button class="dash_btn" id="btn_trn_history">Transaction History</button>
+    </br>
+    <center>
+    <button class="dash_btn" id="btn_signout" style="background-color: rgba(134, 98, 19, 0.76);">Signout</button>
+    </center>
+    <div id="div_balance_inquiry">
+        <span class="close">&times;</span>
+        <center>
+            <h1>Balance Inquiry</h1>
+                <p>Some text in the Box..</p>
+        </center>
+    </div>
+
+    <script>
+        var modal = document.getElementById("div_balance_inquiry");
+        var btn = document.getElementById("btn_balance_inquiry");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+</body>
+</html>
