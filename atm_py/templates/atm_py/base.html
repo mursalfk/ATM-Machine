@@ -1,79 +1,15 @@
+{%  load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'atm_py/style.css' %}">
     <title>{{ title }}</title>
-    <!-- <link rel="stylesheet" href="atm_py/style.css"> -->
-    <style>
-        body{
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            background-color: rgb(2, 34, 92);
-            color: azure;
-        }
-        .dash_btn{
-            background-color: #4CAF50; /* Green */
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            margin: 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            width: 250px;
-        }
-
-        input[type="button"] , button{
-            background-color: #4CAF50; /* Green */
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            
-        }
-
-        input[type="button"]:hover, button:hover,  .dash_btn:hover {
-            background-color: #8aa78b; /* Green */
-            color: rgb(0, 38, 87);
-        }
-
-        #div_balance_inquiry{
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            padding-top: 100px; /* Location of the box */
-            padding-left: 5%;
-            padding-right: 5%;
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-        }
-        .close {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover, .close:focus {
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            cursor: pointer;
-        }     
-    </style>
 </head>
 <body>
     {% block content %}
     {% endblock %}
+    <div class="footer">
+        <p>Created for Diya Interactive AB by <a href="https://mursalfk.github.io" target="_blank">Mursal Furqan</a></p>
+      </div>
 </body>
 </html>

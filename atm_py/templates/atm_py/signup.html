@@ -5,6 +5,7 @@
             <tr>
                 <td colspan=2>Please Enter the following details to signup</td>
             </tr>
+            <tr><td>&nbsp;</td></tr>
             <tr>
                 <td>User ID:</td>
                 <td><i>System Generated</i></td>
@@ -35,10 +36,14 @@
             </tr>
             <tr>
                 <td>
-                    <a href={% url 'welcome-atm' %}><input type="button" value="Back"></a>
+                    &nbsp;
                 </td>
-                <td>
+            </tr>
+            <tr>
+                <td colspan="2"> <center>
+                    <a href={% url 'welcome-atm' %}><input type="button" value="Back"></a>
                     <a href={% url 'welcome-atm' %}><input type="button" value="Sign Up"></a>
+                </center>
                 </td>
             </tr>
         </table>

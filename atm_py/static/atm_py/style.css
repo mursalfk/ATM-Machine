@@ -1,13 +1,19 @@
 body{
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    background-color: rgb(2, 34, 92);
+  background-color: rgb(2, 34, 92);
+
+    /* background-color: rgb(209, 28, 4); */
     color: azure;
 }
+
+table{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 .dash_btn{
     background-color: #4CAF50; /* Green */
     border: none;
@@ -68,4 +74,12 @@ input[type="button"]:hover, button:hover,  .dash_btn:hover {
     cursor: pointer;
   }
 
-  
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* background-color: red; */
+  color: white;
+  text-align: center;
+}

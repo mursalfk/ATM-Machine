@@ -1,21 +1,33 @@
 {% extends "atm_py/base.html" %}
 {% block content %}
-    <center>
-        <h1>Automated Teller Machine</h1>
-    </center>
-    <h3>Hello Mr/Ms.</h3>
-    <h2>What would you like to do?</h2>
-    <button class="dash_btn" id="btn_balance_inquiry">Balance Inquiry</button>
-    <button class="dash_btn" id="btn_withdraw_money">Withdraw Money</button>
-    <button class="dash_btn" id="btn_add_balance">Add Balance</button>
-    </br>
-    <button class="dash_btn" id="btn_chng_pwd">Change Password</button>
-    <button class="dash_btn" id="btn_chng_pin">Change Pin</button>
-    <button class="dash_btn" id="btn_trn_history">Tranc. History</button>
-    </br>
-    <center>
-    <a href={% url 'welcome-atm' %}><button class="dash_btn" id="btn_signout" style="background-color: rgba(134, 98, 19, 0.76);">Signout</button></a>
-    </center>
+  <table id="table_dashboard">
+    <tr>
+      <td colspan="3"><center><h1>Automated Teller Machine</h1></center></td>
+    </tr>
+    <tr>
+      <td><h3>Hello Mr/Ms.</h3></td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="3"><h2>What would you like to do?</h2></td>
+    </tr>
+    <tr>
+      <td><button class="dash_btn" id="btn_balance_inquiry">Balance Inquiry</button></td>
+      <td><button class="dash_btn" id="btn_withdraw_money">Withdraw Money</button></td>
+      <td><button class="dash_btn" id="btn_add_balance">Add Balance</button></td>
+    </tr>
+    <tr>
+      <td><button class="dash_btn" id="btn_chng_pwd">Change Password</button></td>
+      <td><button class="dash_btn" id="btn_chng_pin">Change Pin</button></td>
+      <td><button class="dash_btn" id="btn_trn_history">Tranc. History</button></td>
+    </tr>
+    <tr>
+      <td colspan="3"><center>
+        <a href={% url 'welcome-atm' %}><button class="dash_btn" id="btn_signout" style="background-color: rgba(134, 98, 19, 0.76);">Signout</button></a>
+        </center></td>
+    </tr>
+  </table>
+  
     <div id="div_balance_inquiry">
         <span class="close">&times;</span>
         <center>
