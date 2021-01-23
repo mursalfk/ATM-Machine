@@ -1,0 +1,51 @@
+{% extends "atm_py/base.html" %}
+{% block content %}
+    
+<form action="" method="POST">
+    {% csrf_token %}
+    <table id="table_signin">
+        <tr>
+            <td colspan="3">
+                <center><h1>Automated Teller Machine</h1></center>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="3">
+                <center>
+                    Username: &nbsp;&nbsp;&nbsp;
+                    <input type="text" name="username">
+                </center>
+            </th>
+        </tr>
+        <tr>
+            <th colspan="3">
+                <center>
+                    Password: &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="password">
+                </center>
+            </th>
+            
+        </tr>
+        <tr>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            {% for message in messages %}
+            <tr><td><center>{{message}}</center></td></tr>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td colspan="2">
+                <center>
+                    <input type="submit" value="Login">
+                    <!-- <a href={% url 'dashboard-atm' %}><input type="button" value="Login"></a> -->
+                    <a href={% url 'welcome-atm' %}><input type="button" value="Back"></a>
+                </center>
+            </td>
+        </tr>
+    </table>
+</form>
+    
+{% endblock content %}

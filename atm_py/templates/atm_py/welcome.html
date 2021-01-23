@@ -19,6 +19,11 @@
             </center>
         </td>
     </tr>
+    <tr>
+        {% for message in messages %}
+        <tr><td><center>{{message}}</center></td></tr>
+        {% endfor %}
+    </tr>
 
 </table>
 

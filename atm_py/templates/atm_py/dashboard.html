@@ -5,8 +5,8 @@
       <td colspan="3"><center><h1>Automated Teller Machine</h1></center></td>
     </tr>
     <tr>
-      <td><h3>Hello Mr/Ms.</h3></td>
-      <td colspan="2">&nbsp;</td>
+      <td><h3>Hello Mr/Ms. &nbsp; {{request.user}}</h3></td>
+      <td colspan="2"></td>
     </tr>
     <tr>
       <td colspan="3"><h2>What would you like to do?</h2></td>
@@ -18,13 +18,12 @@
     </tr>
     <tr>
       <td><button class="dash_btn" id="btn_chng_pwd">Change Password</button></td>
-      <td><button class="dash_btn" id="btn_chng_pin">Change Pin</button></td>
+      <!-- <td><button class="dash_btn" id="btn_chng_pin">Change Pin</button></td> -->
       <td><button class="dash_btn" id="btn_trn_history">Tranc. History</button></td>
-    </tr>
-    <tr>
       <td colspan="3"><center>
-        <a href={% url 'welcome-atm' %}><button class="dash_btn" id="btn_signout" style="background-color: rgba(134, 98, 19, 0.76);">Signout</button></a>
-        </center></td>
+        <a href={% url 'logout-user' %}><button class="dash_btn" id="btn_signout" style="background-color: rgba(134, 98, 19, 0.76);">Signout</button></a>
+        </center>
+      </td>
     </tr>
   </table>
   
