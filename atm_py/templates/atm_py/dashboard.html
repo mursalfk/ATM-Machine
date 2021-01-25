@@ -12,14 +12,34 @@
       <td colspan="3"><h2>What would you like to do?</h2></td>
     </tr>
     <tr>
-      <td><button class="dash_btn" id="btn_balance_inquiry">Balance Inquiry</button></td>
-      <td><button class="dash_btn" id="btn_withdraw_money">Withdraw Money</button></td>
-      <td><button class="dash_btn" id="btn_add_balance">Add Balance</button></td>
+      <td>
+        <a href={% url 'balance_inquiry_atm' %}>
+          <button class="dash_btn" id="btn_balance_inquiry">Balance Inquiry</button>
+        </a>
+      </td>
+      <td>
+        <a href={% url 'withdraw_money_atm' %}>
+          <button class="dash_btn" id="btn_withdraw_money">Withdraw Money</button>
+        </a>
+      </td>
+      <td>
+        <a href={% url 'add_balance_atm' %}>
+          <button class="dash_btn" id="btn_add_balance">Add Balance</button>
+        </a>
+      </td>
     </tr>
     <tr>
-      <td><button class="dash_btn" id="btn_chng_pwd">Change Password</button></td>
+      <td>
+        <a href={% url 'change_password_atm' %}>
+          <button class="dash_btn" id="btn_chng_pwd">Change Password</button>
+        </a>
+      </td>
       <!-- <td><button class="dash_btn" id="btn_chng_pin">Change Pin</button></td> -->
-      <td><button class="dash_btn" id="btn_trn_history">Tranc. History</button></td>
+      <td>
+        <a href={% url 'tranc_history_atm' %}>
+          <button class="dash_btn" id="btn_trn_history">Tranc. History</button>
+        </a>
+      </td>
       <td colspan="3"><center>
         <a href={% url 'logout-user' %}><button class="dash_btn" id="btn_signout" style="background-color: rgba(134, 98, 19, 0.76);">Signout</button></a>
         </center>
@@ -35,7 +55,7 @@
         </center>
     </div>
 
-    <script>
+    <!-- <script>
         var modal = document.getElementById("div_balance_inquiry");
         var btn = document.getElementById("btn_balance_inquiry");
         var span = document.getElementsByClassName("close")[0];
@@ -50,5 +70,5 @@
             modal.style.display = "none";
           }
         }
-    </script>
+    </script> -->
 {% endblock content %}

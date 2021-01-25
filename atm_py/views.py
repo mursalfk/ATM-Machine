@@ -6,10 +6,13 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 def welcome(request):
+    context = {
+        'title':'Welcome'
+    }
     if request.user.is_authenticated:
         return redirect('dashboard-atm')
     else:
-        return render(request, 'atm_py/welcome.html', {'title':'Welcome'})
+        return render(request, 'atm_py/welcome.html', context)
 
 def loginpage(request):
     if request.user.is_authenticated:
@@ -35,6 +38,9 @@ def logoutUser(request):
     logout(request)
     return redirect('login-atm')
 
+def accessAdmin(request):
+    return redirect('admin-atm')
+
 def signuppage(request):
     if request.user.is_authenticated:
         return redirect('dashboard-atm')
@@ -55,3 +61,38 @@ def signuppage(request):
 @login_required(login_url='/')
 def dashboard(request):
     return render(request, 'atm_py/dashboard.html', {'title':'Dashboard'})
+
+@login_required(login_url='/')
+def add_balance(request):
+    context = {
+        'title':'Add Balance'
+    }
+    return render(request, 'atm_py/add_balance.html', context)
+        
+@login_required(login_url='/')
+def balance_inquiry(request):
+    context = {
+        'title':'Balance Inquiry'
+    }
+    return render(request, 'atm_py/balance_inquiry.html', context)
+
+@login_required(login_url='/')
+def change_password(request):
+    context = {
+        'title':'Change Password'
+    }
+    return render(request, 'atm_py/change_password.html', context)
+
+@login_required(login_url='/')
+def tranc_history(request):
+    context = {
+        'title':'Transaction History'
+    }
+    return render(request, 'atm_py/tranc_history.html', context)
+
+@login_required(login_url='/')
+def withdraw_money(request):
+    context = {
+        'title':'Withdraw Money'
+    }
+    return render(request, 'atm_py/withdraw_money.html', context)
