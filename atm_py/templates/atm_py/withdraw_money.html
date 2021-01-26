@@ -1,38 +1,42 @@
 {% extends "atm_py/base.html" %}
 {% block content %}
-  <center>
-    <h1>Withdraw Money</h1>
-    <a href={% url 'welcome-atm' %}><button>Back</button></a>
-    <a href={% url 'logout-user' %}><button class="dash_btn" id="btn_signout" style="background-color: rgba(134, 98, 19, 0.76);">Signout</button></a>
-  </center>
-  
-  <!-- <table id="table_dashboard">
+<!-- <form action="" method="POST"> -->
+  <!-- {% csrf_token %} -->
+  <table>
     <tr>
-      <td colspan="3"><center><h1>Automated Teller Machine</h1></center></td>
+      <td><h2>
+        Hello Mr/Ms. &nbsp; {{request.user}}
+      </h2></td>
     </tr>
     <tr>
-      <td><h3>Hello Mr/Ms. &nbsp; {{request.user}}</h3></td>
-      <td colspan="2"></td>
+      <td>
+        <h1>
+          Welcome to <b><i>Money Withdrawal System</i></b>
+        </h1>
+      </td>
     </tr>
     <tr>
-      <td colspan="3"><h2>What would you like to do?</h2></td>
+      <td><h3>How much money would like to withdraw?</h3></td>
+      <td>
+        <input type="text" placeholder="In Rupees">
+      </td>
     </tr>
     <tr>
-      <td><button class="dash_btn" id="btn_balance_inquiry">Balance Inquiry</button></td>
-      <td><button class="dash_btn" id="btn_withdraw_money">Withdraw Money</button></td>
-      <td><button class="dash_btn" id="btn_add_balance">Add Balance</button></td>
+      
     </tr>
     <tr>
-      <td><button class="dash_btn" id="btn_chng_pwd">Change Password</button></td>
-      <td><button class="dash_btn" id="btn_trn_history">Tranc. History</button></td>
-      <td colspan="3"><center>
-        <a href={% url 'logout-user' %}><button class="dash_btn" id="btn_signout" style="background-color: rgba(134, 98, 19, 0.76);">Signout</button></a>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <center>
+          <a href={% url 'welcome-atm' %}><button>Back</button></a>
+          &nbsp; &nbsp; &nbsp; &nbsp; 
+          <button>Withdraw Money</button>
+
         </center>
       </td>
     </tr>
-  </table> -->
-  
-
-
-    
+  </table>
+<!-- </form> -->
 {% endblock content %}

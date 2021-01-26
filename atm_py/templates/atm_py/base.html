@@ -3,14 +3,23 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'atm_py/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'atm_py/favicon.png' %}" type="image/x-icon">
     <title>{{ title }}</title>
 </head>
 <body>
-    <!-- <center><h1>---------- Automated Teller Machine ----------</h1></center> -->
+    <!-- Header -->
+    <center>
+        <img src="{% static 'atm_py/logo.png' %}" alt="logo" width="300" style="padding-top: 25px;">
+        <h1>Automated Teller Machine</h1>
+    </center>
+
+    <!-- Main Body -->
     {% block content %}
     {% endblock %}
+    
+    <!-- Footer -->
     <div class="footer">
         <p>Created for Diya Interactive AB by <a href="https://mursalfk.github.io" target="_blank">Mursal Furqan</a></p>
       </div>
 </body>
-</html>
+</html> 

@@ -1,38 +1,71 @@
 {% extends "atm_py/base.html" %}
 {% block content %}
-  <center>
-    <h1>Transaction History</h1>
-    <a href={% url 'welcome-atm' %}><button>Back</button></a>
-    <a href={% url 'logout-user' %}><button class="dash_btn" id="btn_signout" style="background-color: rgba(134, 98, 19, 0.76);">Signout</button></a>
-  </center>
-  
-  <!-- <table id="table_dashboard">
+<!-- <form action="" method="POST"> -->
+  <!-- {% csrf_token %} -->
+  <table>
     <tr>
-      <td colspan="3"><center><h1>Automated Teller Machine</h1></center></td>
+      <td><h2>
+        Hello Mr/Ms. &nbsp; <i>{{request.user}}</i>
+      </h2></td>
     </tr>
     <tr>
-      <td><h3>Hello Mr/Ms. &nbsp; {{request.user}}</h3></td>
-      <td colspan="2"></td>
+      <td>
+        <h1>
+          Welcome to <b><i>Transaction History Section</i></b>
+        </h1>
+      </td>
     </tr>
     <tr>
-      <td colspan="3"><h2>What would you like to do?</h2></td>
+      <td><hr></td>
+    </tr>
+
+    <tr>
+      <td><h3>Here is Your Transaction History</h3></td>
+    </tr>
+    
+    <!-- This div would hold all the transaction history -->
+    <tr>
+      <td>
+        <div class="dev_tranc_history">
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+          History <br>
+        </div>
+      </td>
     </tr>
     <tr>
-      <td><button class="dash_btn" id="btn_balance_inquiry">Balance Inquiry</button></td>
-      <td><button class="dash_btn" id="btn_withdraw_money">Withdraw Money</button></td>
-      <td><button class="dash_btn" id="btn_add_balance">Add Balance</button></td>
+      <td>&nbsp;</td>
     </tr>
     <tr>
-      <td><button class="dash_btn" id="btn_chng_pwd">Change Password</button></td>
-      <td><button class="dash_btn" id="btn_trn_history">Tranc. History</button></td>
-      <td colspan="3"><center>
-        <a href={% url 'logout-user' %}><button class="dash_btn" id="btn_signout" style="background-color: rgba(134, 98, 19, 0.76);">Signout</button></a>
+      <td colspan="2">
+        <center>
+          <a href={% url 'welcome-atm' %}><button>Back</button></a>
         </center>
       </td>
     </tr>
-  </table> -->
-  
-
-
-    
+  </table>
+<!-- </form> -->
 {% endblock content %}

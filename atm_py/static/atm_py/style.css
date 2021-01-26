@@ -29,6 +29,11 @@ table{
     width: 250px;
 }
 
+input[type="text"], input[type="password"], input[type="email"]{
+  border-radius: 2px;
+  padding: 7px;
+}
+
 input[type="button"], input[type="submit"] , button{
     background-color: #4CAF50; /* Green */
     border: none;
@@ -65,6 +70,19 @@ input[type="button"]:hover,input[type="submit"]:hover, button:hover,  .dash_btn:
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.dev_tranc_history{
+  background-color: rgb(255, 255, 255);
+  font-family: 'Courier New', Courier, monospace; 
+  color:  rgb(2, 34, 92);
+  font-weight: bold;
+  padding-left: 10px;
+  padding-top:5px;
+  padding-bottom:5px;
+  height: 250px;
+  width: 100%;
+  overflow: scroll;
 }
 
 .close {
