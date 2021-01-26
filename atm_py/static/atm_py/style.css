@@ -12,6 +12,8 @@ table{
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  /* border-color: rgb(146, 101, 43);
+  border-width: 4px; */
 }
 
 .dash_btn{
