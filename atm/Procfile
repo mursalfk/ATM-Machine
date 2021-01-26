@@ -1,1 +1,1 @@
-web: gunicorn atm.wsgi --log-file -
+web: gunicorn atm.wsgi
