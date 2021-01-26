@@ -32,6 +32,7 @@ table{
 input[type="text"], input[type="password"], input[type="email"]{
   border-radius: 2px;
   padding: 7px;
+  border-radius: 10%;
 }
 
 input[type="button"], input[type="submit"] , button{
@@ -50,27 +51,6 @@ input[type="button"]:hover,input[type="submit"]:hover, button:hover,  .dash_btn:
     background-color: #8aa78b; /* Green */
     color: rgb(0, 38, 87);
   }
-
-#div_balance_inquiry{
-    display: none; /* Hidden by default */
-    position: absolute; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    padding-left: 5%;
-    padding-right: 5%;
-    /* Keep the Div at the center of the page */
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  	margin: auto;
-    
-    width: 50%; /* Full width */
-    height: 50%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
 
 .dev_tranc_history{
   background-color: rgb(255, 255, 255);
