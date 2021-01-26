@@ -27,7 +27,7 @@ SECRET_KEY = '$%k%n*3+i!dmeuxqw)qex2@^621hbu1qqr$+8#6(=@nfaw6%+_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mrmapp.herokuapp.com']
+ALLOWED_HOSTS = ['python-atm.herokuapp.com']
 
 
 # Application definition
