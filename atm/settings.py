@@ -27,7 +27,9 @@ SECRET_KEY = '$%k%n*3+i!dmeuxqw)qex2@^621hbu1qqr$+8#6(=@nfaw6%+_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['python-atm.herokuapp.com']
+# ALLOWED_HOSTS = ['python-atm.herokuapp.com']
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -80,7 +82,7 @@ WSGI_APPLICATION = 'atm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -121,9 +123,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
