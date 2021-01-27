@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '$%k%n*3+i!dmeuxqw)qex2@^621hbu1qqr$+8#6(=@nfaw6%+_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ['python-atm.herokuapp.com']
 ALLOWED_HOSTS = ['*']
@@ -87,9 +87,9 @@ DATABASES = {
 }
 
 # Change Database to PostGreSQL
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+# import dj_database_url
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
 
 
 
