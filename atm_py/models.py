@@ -22,5 +22,11 @@ class Transaction(models.Model):
     time = models.TimeField(auto_now_add=True)
     action = models.CharField(max_length=200, default="username")
 
+class Transaction_dummy(models.Model):
+    '''Replace these names with ID when you learn them completely'''
+    user_id = models.ForeignKey(DataClass, on_delete=models.CASCADE)
+    date = models.DateField(auto_now_add=True)
+    time = models.TimeField(auto_now_add=True)
+    action = models.CharField(max_length=200, default="username")
 #     def __str__(self):
 #         return self.text

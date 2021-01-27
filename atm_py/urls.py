@@ -3,7 +3,7 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    path('adminpanel/', admin.site.urls, name='top-atm'),
+    # path('adminpanel/', admin.site.urls, name='top-atm'),
     path('', views.welcome, name="welcome-atm"),
     path('login/', views.loginpage, name="login-atm"),
     path('signup/', views.signuppage, name="signup-atm"),
