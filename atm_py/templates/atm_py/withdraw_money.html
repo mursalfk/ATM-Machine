@@ -23,12 +23,14 @@
       </td>
     </tr>
     <tr>
+      <td colspan="2"  id="forgot_pwd_txt"><center>
+        <h2>{{zero_balance_alert}}</h2>
+      </center>
+      </td>
     </tr>
+    <tr><td>&nbsp;</td></tr>
     <tr>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="2">
+      <td colspan="2" >
         <center>
           <a href={% url 'dashboard-atm' %}><input type="submit" value="Withdraw Money"></a> 
         </form>
@@ -38,6 +40,5 @@
       </td>
     </tr>
   </table>
-
 
 {% endblock content %}
