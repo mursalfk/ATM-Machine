@@ -1,7 +1,6 @@
 {% extends "atm_py/base.html" %}
 {% block content %}
-<!-- <form action="" method="POST"> -->
-  <!-- {% csrf_token %} -->
+
   <table>
     <tr>
       <td><h2>
@@ -11,18 +10,19 @@
     <tr>
       <td>
         <h1>
-          Welcome to <b><i>Money Addition System</i></b>
+          Welcome to <b><i>Money Withdrawal System</i></b>
         </h1>
       </td>
     </tr>
     <tr>
       <td><h3>How much money would like to Add?</h3></td>
       <td>
-        <input type="text" placeholder="In Rupees">
+        <form action="" method="POST">
+          {% csrf_token %}
+        {{form.amount}}
       </td>
     </tr>
     <tr>
-      
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -30,12 +30,14 @@
     <tr>
       <td colspan="2">
         <center>
-          <a href={% url 'welcome-atm' %}><button>Back</button></a>
-          &nbsp; &nbsp; &nbsp; &nbsp; 
-          <button>Add Balance</button>
+          <input type="submit" value="Add Money"> 
+        </form>
+        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+        <a href={% url 'dashboard-atm' %}><button>Back</button></a>
         </center>
       </td>
     </tr>
   </table>
-<!-- </form> -->
+
+
 {% endblock content %}

@@ -10,10 +10,15 @@ table{
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 800px;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   /* border-color: rgb(146, 101, 43);
   border-width: 4px; */
+}
+
+table tr td {
+  word-wrap: break-word;
 }
 
 .dash_btn{
@@ -35,6 +40,11 @@ input[type="text"], input[type="password"], input[type="email"]{
   border-radius: 10%;
 }
 
+#forgot_pwd_txt{
+  background-color: #8aa78b;
+  color: rgb(2, 34, 92);
+}
+
 input[type="button"], input[type="submit"] , button{
     background-color: #4CAF50; /* Green */
     border: none;
@@ -52,18 +62,34 @@ input[type="button"]:hover,input[type="submit"]:hover, button:hover,  .dash_btn:
     color: rgb(0, 38, 87);
   }
 
-.dev_tranc_history{
-  background-color: rgb(255, 255, 255);
+.div_tranc_history{
   font-family: 'Courier New', Courier, monospace; 
-  color:  rgb(2, 34, 92);
+  color:  rgb(255, 255, 255);
   font-weight: bold;
   padding-left: 10px;
   padding-top:5px;
   padding-bottom:5px;
-  height: 250px;
-  width: 100%;
-  overflow: scroll;
+  height: 550px;
+  width: 70%;
+
 }
+
+.wrapper{
+  overflow: auto;
+  position: sticky;
+  height: 600px;
+  background-color: rgba(133, 133, 185, 0.356);
+  width: 1000px;
+
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 
 .close {
     color: #aaaaaa;
@@ -88,3 +114,6 @@ input[type="button"]:hover,input[type="submit"]:hover, button:hover,  .dash_btn:
   color: white;
   text-align: center;
 }
+
+
+

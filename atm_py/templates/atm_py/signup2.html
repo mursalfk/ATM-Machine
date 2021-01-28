@@ -3,6 +3,7 @@
 
 <form action="" method="POST">
     {% csrf_token %}
+    
     <table>
         <tr><td colspan="2"><center><h2>Signup Form </h2></center></td></tr>
         <tr>
@@ -27,6 +28,16 @@
         <tr>
             <td><center><a href={% url 'welcome-atm' %}><input type="button" value="Back"></a></center></td>
             <td><center><input type="submit" name="Sign Account"></center></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2" id="forgot_pwd_txt">
+                <center>
+                    <p>Already Have an Account? <a href={% url 'login-atm' %}>Signin</a></p>
+                </center>
+            </td>
         </tr>
     </table>
 </form>

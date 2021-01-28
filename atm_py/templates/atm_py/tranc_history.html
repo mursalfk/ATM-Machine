@@ -1,71 +1,40 @@
 {% extends "atm_py/base.html" %}
 {% block content %}
-<!-- <form action="" method="POST"> -->
-  <!-- {% csrf_token %} -->
-  <table>
-    <tr>
-      <td><h2>
-        Hello Mr/Ms. &nbsp; <i>{{request.user}}</i>
-      </h2></td>
-    </tr>
-    <tr>
-      <td>
-        <h1>
-          Welcome to <b><i>Transaction History Section</i></b>
-        </h1>
-      </td>
-    </tr>
-    <tr>
-      <td><hr></td>
-    </tr>
 
-    <tr>
-      <td><h3>Here is Your Transaction History</h3></td>
-    </tr>
-    
-    <!-- This div would hold all the transaction history -->
-    <tr>
-      <td>
-        <div class="dev_tranc_history">
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-          History <br>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <center>
-          <a href={% url 'welcome-atm' %}><button>Back</button></a>
-        </center>
-      </td>
-    </tr>
-  </table>
-<!-- </form> -->
+  <div class="wrapper">
+    <table  class = "div_tranc_history wrapper">
+      <tr>
+        <td colspan="4">
+          <h2>Hello Mr/Ms. &nbsp; <i>{{request.user}}</i></h2>
+          <h1>Welcome to <b><i>Transaction History Section</i></b></h1>
+          Here is Your Transaction History
+        </td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">User ID</th>
+        <th style="padding: 10px;">Date & Time</th>
+        <th style="padding: 10px;">Transaction</th>
+        <th style="padding: 10px;">Updated Balance</th>
+      </tr>
+      {% for i in history_td  %}
+      <tr>
+        <td style="padding: 10px; ">{{i.user_id}}</td>
+        <td style="padding: 10px; ">{{i.dateTime_field}}</td>
+        <td style="padding: 10px; border: 1px solid rgb(0, 0, 0)">{{i.withdrawl_amount}}</td>
+        <td style="padding: 10px; border: 1px solid rgb(0, 0, 0)">{{i.remaining_amount}}</td>
+      </tr>
+      {% endfor %}
+      
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <center>
+            <a href={% url 'welcome-atm' %}><button>Back</button></a>
+          </center>
+        </td>
+      </tr>
+    </table>
+  </div>
 {% endblock content %}
