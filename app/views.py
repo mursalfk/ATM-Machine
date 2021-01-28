@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Balance_inq, TransactionHistory
 from .forms import WithdrawMoney
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -16,7 +17,7 @@ def change_password(request):
     context = {
         'title':'Change Password'
     }
-    return render(request, 'atm_py/change_password.html', context)
+    return render(request, 'atm_py/password_reset.html', context)
 
 @login_required(login_url='/')
 def balance_inquiry(request):
@@ -122,3 +123,4 @@ def tranc_history(request):
         'title':'Transaction History',
     }
     return render(request, 'atm_py/tranc_history.html', context)
+

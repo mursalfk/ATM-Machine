@@ -34,7 +34,7 @@ def loginpage(request):
                 messages.info(request, 'Username or Password is incorrect')
                 return render(request, 'atm_py/login2.html', context)
         
-        return render(request, 'atm_py/login2.html', context)
+        return render(request, 'atm_py/login.html', context)
 
 def logoutUser(request):
     logout(request)
@@ -57,7 +57,7 @@ def signuppage(request):
                 return redirect('/')
         context = {'form' : form, 'title':'Signup'}
         # return render(request, 'atm_py/signup.html', {'title':'Signup'}, context)
-        return render(request, 'atm_py/signup2.html', context)
+        return render(request, 'atm_py/signup.html', context)
 
 # This line will restrict users to not to see the page if they are not signed in for every view we put above at
 

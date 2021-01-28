@@ -77,9 +77,9 @@ input[type="button"]:hover,input[type="submit"]:hover, button:hover,  .dash_btn:
 .wrapper{
   overflow: auto;
   position: sticky;
-  height: 600px;
+  height: 370px;
   background-color: rgba(133, 133, 185, 0.356);
-  width: 1000px;
+  width: 600px;
 
   margin: 0;
   position: absolute;
