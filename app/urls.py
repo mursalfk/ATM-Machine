@@ -1,6 +1,7 @@
 from django.urls import path
 from django.contrib import admin
 from . import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('balance_inquiry/', views.balance_inquiry, name="balance_inquiry_atm"),
@@ -9,5 +10,6 @@ urlpatterns = [
     path('tranc_history/', views.tranc_history, name="tranc_history_atm"),
     path('change_password/', views.change_password, name="change_password_atm"),
     path('add_balance/', views.add_balance, name="add_balance_atm"),
+    # path('reset_password', auth_views.PasswordReserView.as_view()),
 
 ]
