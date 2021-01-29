@@ -8,12 +8,10 @@ from django.http import HttpResponse
 import time
 
 # Create your views here.
-
 def splash_screen(request):
     context = {
         'title':'Welcome - ATM'
-    }
-    
+    } 
     return render(request, 'atm_py/splash.html', context)
 
 def welcome(request):
@@ -101,8 +99,6 @@ def withdraw_money(request):
     }
     return render(request, 'atm_py/withdraw_money.html', context)
 
-
-
 @login_required(login_url='/')
 def add_balance(request):
     flag = 1
@@ -143,8 +139,6 @@ def add_balance(request):
         'title':'Add Balance'
     }
     return render(request, 'atm_py/add_balance.html', context)
-
-
 
 @login_required(login_url='/')
 def tranc_history(request):
