@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from .models import Balance_inq, TransactionHistory
 from .forms import WithdrawMoney
 from django.http import HttpResponse
+import time
 
 # Create your views here.
 
@@ -56,7 +57,7 @@ def balance_inquiry(request):
 
 @login_required(login_url='/')
 def withdraw_money(request):
-    
+    flag = 1
     form = WithdrawMoney(request.POST or None)
     user = request.user 
     status = "Enter Amount"
@@ -66,24 +67,33 @@ def withdraw_money(request):
     if request.method == "POST":
         if form.is_valid():
             print('Form Submitted')
-            amount = form.cleaned_data.get('amount')
-            amount = int(amount)
+            try:
+                amount = form.cleaned_data.get('amount')
+                amount = int(amount) 
+            except ValueError:
+                flag = 0
             print(amount)
-            if Balance_inq.objects.filter(user_id = user).exists():
-                current_balance = Balance_inq.objects.get(user_id = user )
-                if amount > int(current_balance.balance):
-                    status = "Insufficient Balance"
+            if flag == 1:
+                if Balance_inq.objects.filter(user_id = user).exists():
+                    current_balance = Balance_inq.objects.get(user_id = user )
+                    if amount > int(current_balance.balance):
+                        status = "Insufficient Balance"
+                    else:
+                        # if current_balance <= 0 or current_balance :
+                        current_balance.balance = int(current_balance.balance) - amount
+                        print(current_balance)
+                        remaining_ammount = current_balance.balance
+                        td = TransactionHistory(user_id = user, remaining_amount = remaining_ammount, withdrawl_amount = amount)
+                        current_balance.save()
+                        td.save()
+                        status = "Transaction Successful"
                 else:
-                    # if current_balance <= 0 or current_balance :
-                    current_balance.balance = int(current_balance.balance) - amount
-                    print(current_balance)
-                    remaining_ammount = current_balance.balance
-                    td = TransactionHistory(user_id = user, remaining_amount = remaining_ammount, withdrawl_amount = amount)
-                    current_balance.save()
-                    td.save()
-                    status = "Transaction Successful"
+                    status = "Insufficient/Zero Balance"
             else:
-                status = "Insufficient/Zero Balance"
+                status = "Please Enter a valid Amount"
+        # else:
+        #     status = "Please Enter a valid Amount"
+
     context = {
         'zero_balance_alert' : status,
         'form' : form,
@@ -95,6 +105,7 @@ def withdraw_money(request):
 
 @login_required(login_url='/')
 def add_balance(request):
+    flag = 1
     form = WithdrawMoney(request.POST or None)
     user = request.user 
     status = "Enter Amount"
@@ -103,26 +114,28 @@ def add_balance(request):
     if request.method == "POST":
         if form.is_valid():
             print('Form Submitted')
-            amount = form.cleaned_data.get('amount')
-            amount = int(amount)
+            try:
+                amount = form.cleaned_data.get('amount')
+                amount = int(amount) 
+            except ValueError:
+                flag = 0
             print(amount)
-            print(user)
-            print(Balance_inq.objects.filter(user_id = user).exists())
-            if Balance_inq.objects.filter(user_id = user).exists():
-                current_balance = Balance_inq.objects.get(user_id = user )
-                current_balance.balance = int(current_balance.balance) + amount
-                print(current_balance)
-                remaining_ammount = current_balance.balance
-                td = TransactionHistory(user_id = user, remaining_amount = remaining_ammount, withdrawl_amount = amount)
-                current_balance.save()
-                td.save()
-                status = "Balance Successfully Added"
+            if flag == 1:
+                if Balance_inq.objects.filter(user_id = user).exists():
+                    current_balance = Balance_inq.objects.get(user_id = user )
+                    current_balance.balance = int(current_balance.balance) + amount
+                    print(current_balance)
+                    remaining_ammount = current_balance.balance
+                    td = TransactionHistory(user_id = user, remaining_amount = remaining_ammount, withdrawl_amount = amount)
+                    current_balance.save()
+                    td.save()
+                    status = "Balance Successfully Added"
+                else:
+                    inquiry = Balance_inq(user_id = user)
+                    inquiry.balance = amount
+                    inquiry.save()
             else:
-                inquiry = Balance_inq(user_id = user)
-                inquiry.balance = amount
-                inquiry.save()
-            
-            
+                status = "Please Enter a valid Amount"
 
     context = {
         'status' : status,
