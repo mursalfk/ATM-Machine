@@ -8,8 +8,25 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+def splash_screen(request):
+    context = {
+        'title':'Welcome - ATM'
+    }
+    
+    return render(request, 'atm_py/splash.html', context)
+
+def welcome(request):
+    context = {
+        'title':'Welcome'
+    }
+    if request.user.is_authenticated:
+        return redirect('dashboard-atm')
+    else:
+        return render(request, 'atm_py/welcome.html', context)
+
 @login_required(login_url='/')
 def dashboard(request):
+    # print(request.first_name)
     return render(request, 'atm_py/dashboard.html', {'title':'Dashboard'})
 
 @login_required(login_url='/')
@@ -64,15 +81,17 @@ def withdraw_money(request):
                     td = TransactionHistory(user_id = user, remaining_amount = remaining_ammount, withdrawl_amount = amount)
                     current_balance.save()
                     td.save()
-                    status = "Balance Successfully"
+                    status = "Transaction Successful"
             else:
-                status = "Insufficient Zero Balance"
+                status = "Insufficient/Zero Balance"
     context = {
         'zero_balance_alert' : status,
         'form' : form,
         'title':'Withdraw Money'
     }
     return render(request, 'atm_py/withdraw_money.html', context)
+
+
 
 @login_required(login_url='/')
 def add_balance(request):

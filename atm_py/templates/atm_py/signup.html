@@ -3,9 +3,17 @@
 
 <form action="" method="POST">
     {% csrf_token %}
-    
-    <table>
+    <center>
+    <table class="signup_table">
         <tr><td colspan="2"><center><h2>Signup Form </h2></center></td></tr>
+        <tr>
+            <td>{{form.first_name.label}}</td>
+            <td>{{form.first_name}}</td>
+        </tr>
+        <tr>
+            <td>{{form.last_name.label}}</td>
+            <td>{{form.last_name}}</td>
+        </tr>
         <tr>
             <td>{{form.username.label}}</td>
             <td>{{form.username}}</td>
@@ -26,8 +34,8 @@
             <td colspan="2">{{form.errors}}&nbsp;</td>
         </tr>
         <tr>
-            <td><center><a href={% url 'welcome-atm' %}><input type="button" value="Back"></a></center></td>
-            <td><center><input type="submit" name="Sign Account"></center></td>
+            <td colspan="2"><center><a href={% url 'welcome-atm' %}><input type="button" value="Back"></a>
+            <input type="submit" name="Sign Account"></center></td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -40,5 +48,6 @@
             </td>
         </tr>
     </table>
+</center>
 </form>
 {% endblock content %}

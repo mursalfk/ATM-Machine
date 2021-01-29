@@ -4,8 +4,11 @@ from . import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('balance_inquiry/', views.balance_inquiry, name="balance_inquiry_atm"),
+    path('', views.splash_screen, name="splash-atm"),
+    path('splash/', views.welcome, name="welcome-atm"),
     path('dashboard/', views.dashboard, name="dashboard-atm"),
+    path('balance_inquiry/', views.balance_inquiry, name="balance_inquiry_atm"),
+    
     path('withdraw_money/', views.withdraw_money, name="withdraw_money_atm"),
     path('tranc_history/', views.tranc_history, name="tranc_history_atm"),
     path('change_password/', views.change_password, name="change_password_atm"),

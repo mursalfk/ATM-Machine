@@ -1,0 +1,46 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'atm_py/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'atm_py/favicon.png' %}" type="image/x-icon">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <!-- Header -->
+    <center>
+        
+        <!-- <h1>Automated Teller Machine</h1> -->
+    </center>
+    <table>
+        <tr>
+            <td>
+                <center>
+                    <img src="{% static 'atm_py/logo.png' %}" alt="logo" width="50%" style="padding-top: 25px;">
+                </center>   
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        <tr>
+            <td>
+                <center>
+                    <a href={% url 'welcome-atm' %}>
+                        <button>Enter ATM</button>
+                    </a> 
+                    &nbsp;&nbsp;&nbsp;
+                    <a href=/admin/ target="_blank_">
+                        <button>Access Admin Panel</button>
+                    </a>
+                </center>
+            </td>
+        </tr>
+    </table>
+    <!-- Main Body -->
+
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p>Created for Diya Interactive AB by <a href="https://mursalfk.github.io" target="_blank">Mursal Furqan</a></p>
+      </div>
+</body>
+</html> 

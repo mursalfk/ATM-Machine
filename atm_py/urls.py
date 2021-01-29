@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
     # path('admin/', admin.site.urls, name='top-atm'),
-    path('', views.welcome, name="welcome-atm"),
+    # path('', views.welcome, name="welcome-atm"),
     path('login/', views.loginpage, name="login-atm"),
     path('signup/', views.signuppage, name="signup-atm"),
     # path('dashboard/', views.dashboard, name="dashboard-atm"),

@@ -7,14 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-def welcome(request):
-    context = {
-        'title':'Welcome'
-    }
-    if request.user.is_authenticated:
-        return redirect('dashboard-atm')
-    else:
-        return render(request, 'atm_py/welcome.html', context)
+
 
 def loginpage(request):
     if request.user.is_authenticated:
@@ -32,7 +25,7 @@ def loginpage(request):
                 return redirect('dashboard-atm')
             else:
                 messages.info(request, 'Username or Password is incorrect')
-                return render(request, 'atm_py/login2.html', context)
+                return render(request, 'atm_py/login.html', context)
         
         return render(request, 'atm_py/login.html', context)
 
