@@ -144,7 +144,6 @@ def add_balance(request):
                     inquiry = Balance_inq(user_id = user)
                     inquiry.balance = amount
                     inquiry.save()
-                    
             else:
                 status = "Please Enter a valid Amount"
 
