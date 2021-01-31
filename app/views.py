@@ -101,7 +101,6 @@ def withdraw_money(request):
             else:
                 status = "Please Enter a valid Amount"
         # else:
-        #     status = "Please Enter a valid Amount"
 
     context = {
         'zero_balance_alert' : status,
