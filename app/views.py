@@ -11,8 +11,12 @@ import time
 def splash_screen(request):
     context = {
         'title':'Welcome - ATM'
-    } 
-    return render(request, 'atm_py/splash.html', context)
+    }
+    if request.user.is_authenticated:
+        return redirect('dashboard-atm')
+    else:
+        return render(request, 'atm_py/splash.html', context)
+    
 
 def welcome(request):
     context = {
