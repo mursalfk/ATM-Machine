@@ -100,7 +100,6 @@ def withdraw_money(request):
                     status = "Insufficient/Zero Balance"
             else:
                 status = "Please Enter a valid Amount"
-
     context = {
         'zero_balance_alert' : status,
         'form' : form,
