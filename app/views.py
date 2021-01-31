@@ -161,4 +161,4 @@ def tranc_history(request):
         'history_td' : td,
         'title':'Transaction History',
     }
-    return render(request, 'atm_py/tranc_history.html', context)
+    return render(request, 'atm_py/tranc_history.html', context) 
