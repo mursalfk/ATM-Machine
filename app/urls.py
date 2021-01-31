@@ -13,7 +13,6 @@ urlpatterns = [
     path('change_password/', views.change_password, name="change_password_atm"),
     path('add_balance/', views.add_balance, name="add_balance_atm"),
     # For Password Reset Email
-
     path('reset_password/',
     auth_views.PasswordResetView.as_view(),
     name = "reset_password"),
