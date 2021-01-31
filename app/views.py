@@ -162,4 +162,3 @@ def tranc_history(request):
         'title':'Transaction History',
     }
     return render(request, 'atm_py/tranc_history.html', context)
-
