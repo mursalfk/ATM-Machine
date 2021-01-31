@@ -26,7 +26,11 @@ def welcome(request):
 @login_required(login_url='/')
 def dashboard(request):
     # print(request.first_name)
-    return render(request, 'atm_py/dashboard.html', {'title':'Dashboard'})
+    context = {
+        'title' : 'Dashboard',
+        'message' : 'Please Select an Option'
+    }
+    return render(request, 'atm_py/dashboard.html', context)
 
 @login_required(login_url='/')
 def change_password(request):
@@ -85,6 +89,12 @@ def withdraw_money(request):
                         current_balance.save()
                         td.save()
                         status = "Transaction Successful"
+                        context = {
+                            'message' : status,
+                            'title' : 'Dashboard'
+                        }
+                        print(status)
+                        return render(request, 'atm_py/dashboard.html', context)
                 else:
                     status = "Insufficient/Zero Balance"
             else:
@@ -125,11 +135,18 @@ def add_balance(request):
                     td = TransactionHistory(user_id = user, remaining_amount = remaining_ammount, withdrawl_amount = amount)
                     current_balance.save()
                     td.save()
-                    status = "Balance Successfully Added"
+                    status = "Balance Added Successful"
+                    context = {
+                        'message' : status,
+                        'title' : 'Dashboard'
+                    }
+                    print(status)
+                    return render(request, 'atm_py/dashboard.html', context)
                 else:
                     inquiry = Balance_inq(user_id = user)
                     inquiry.balance = amount
                     inquiry.save()
+                    
             else:
                 status = "Please Enter a valid Amount"
 
