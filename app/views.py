@@ -67,7 +67,6 @@ def withdraw_money(request):
     status = "Enter Amount"
     if Balance_inq.objects.filter(user_id = user).exists() == False:
         status = "New Account"
-    
     if request.method == "POST":
         if form.is_valid():
             print('Form Submitted')
