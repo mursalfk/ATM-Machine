@@ -21,8 +21,7 @@ urlpatterns = [
     # of password
     path('reset/<uidb64>/<token>', auth_views.PasswordResetConfirmView.as_view(template_name = "atm_py/password_reset_form.html"), name = "password_reset_confirm"),
     
-    path('reset/done/',
-    auth_views.PasswordResetCompleteView.as_view(template_name = "atm_py/password_reset_done.html"),
+    path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name = "atm_py/password_reset_done.html"),
     name='password_reset_complete'),
 
 ]
