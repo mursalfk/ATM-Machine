@@ -17,7 +17,6 @@ def splash_screen(request):
     else:
         return render(request, 'atm_py/splash.html', context)
     
-
 def welcome(request):
     context = {
         'title':'Welcome'
@@ -45,7 +44,6 @@ def change_password(request):
 
 @login_required(login_url='/')
 def balance_inquiry(request):
-    
     user = request.user 
     # See this code for Zero Balance Withdrawal Thing
     if Balance_inq.objects.filter(user_id = user).exists():
