@@ -146,7 +146,6 @@ def add_balance(request):
                     inquiry.save()
             else:
                 status = "Please Enter a valid Amount"
-
     context = {
         'status' : status,
         'form' : form,
