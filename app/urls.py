@@ -15,7 +15,6 @@ urlpatterns = [
     # For Password Reset Email
     path('reset_password/', auth_views.PasswordResetView.as_view(), name = "reset_password"),
     path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(template_name = "atm_py/password_reset_sent.html"), name='password_reset_done'),
-
     # Here uidb64 means the user id is encoded and the token is for validation 
     # of password
     path('reset/<uidb64>/<token>', auth_views.PasswordResetConfirmView.as_view(template_name = "atm_py/password_reset_form.html"), name = "password_reset_confirm"),
